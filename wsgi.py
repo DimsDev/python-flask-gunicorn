@@ -4,7 +4,7 @@ import time
 import os
 
 application = Flask(__name__)
-cache = redis.StrictRedis(host=os.environ.get("REDIS_SERVICE_HOST","NOT FOUND") , port=os.environ.get("REDIS_PORT","NOT_FOUND"), db=0)
+cache = redis.StrictRedis(host=os.environ.get("REDIS_SERVICE_HOST","NOT FOUND") , port=os.environ.get("REDIS_SERVICE_PORT_REDIS","NOT_FOUND"), db=0)
 
 def get_hit_count():
     retries = 5
