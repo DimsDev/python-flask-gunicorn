@@ -1,9 +1,10 @@
 from flask import Flask
 import redis
 import time
+import os
 
 application = Flask(__name__)
-cache = redis.Redis(host='172.30.252.101', port=6379)
+cache = redis.StrictRedis(host=os.environ.get("REDIS_SERVICE_HOST","NOT FOUND") , port=os.environ.get("REDIS_PORT","NOT_FOUND"), db=0)
 
 def get_hit_count():
     retries = 5
