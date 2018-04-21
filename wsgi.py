@@ -17,7 +17,6 @@ def get_hit_count():
         try:
             return cache.incr('hits')
         except redis.exceptions.ConnectionError as exc:
-            print("{}\n".format(os.environ.get("REDIS_PASSWORD","NOT_FOUND")))
             if retries == 0:
                 raise exc
             retries -= 1
