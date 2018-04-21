@@ -1,3 +1,5 @@
+#-- How to set 2 apps in Openshift
+
 from flask import Flask
 import redis
 import time
